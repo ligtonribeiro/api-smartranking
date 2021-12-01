@@ -16,7 +16,7 @@ export class JogadoresService {
     );
 
     if (jogadorEncontrado) {
-      return this.atualizar(jogadorEncontrado, criarJogadorDto);
+      this.atualizar(jogadorEncontrado, criarJogadorDto);
     } else {
       this.criar(criarJogadorDto);
     }
@@ -33,6 +33,7 @@ export class JogadoresService {
     if (!jogadorEncontrado) {
       throw new NotFoundException(`Jogador com e-mail ${email} não encontrado`);
     }
+    console.log(jogadorEncontrado);
     return jogadorEncontrado;
   }
 
